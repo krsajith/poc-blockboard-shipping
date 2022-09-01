@@ -47,6 +47,10 @@
  */
 import 'zone.js';  // Included with Angular CLI.
 
+const supportsContainerQueries = "container" in document.documentElement.style;
+if (!supportsContainerQueries) {
+  import("container-query-polyfill");
+}
 
 /***************************************************************************************************
  * APPLICATION IMPORTS
