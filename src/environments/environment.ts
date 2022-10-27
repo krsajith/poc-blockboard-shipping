@@ -2,9 +2,22 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
+const requestOptions:RequestInit = {
+  method: 'GET',
+  redirect: 'follow'
+}
+
+let config;
+
+fetch("/config.json", requestOptions)
+  .then(response => config= response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
 export const environment = {
   production: false,
-  apiEndpoint:"http://localhost:8082/business-master-api"
+  apiEndpoint:config.apiEndpoint
 };
 
 /*

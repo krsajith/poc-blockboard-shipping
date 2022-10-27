@@ -1,14 +1,15 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FileUploadService } from './file-upload/file-upload.service';
 import { createMachine, interpret, invoke, reduce, state, transition } from 'robot3';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   showUser(): any {
     console.log(this.machine.state.value);
   }
@@ -64,10 +65,14 @@ export class AppComponent {
   });
 
 
-
-
   constructor(private http: HttpClient, private fs: FileUploadService) {
 
+  }
+  ngOnInit(): void {
+    // this.http.get('config.json').subscribe(resp=>{
+    //   console.log(resp);
+    // });
+    console.log(environment.apiEndpoint);
   }
 
   testIam() {
