@@ -17,7 +17,7 @@ fetch("/config.json", requestOptions)
 
 export const environment = {
   production: false,
-  apiEndpoint:config.apiEndpoint
+  apiEndpoint:'dddd'
 };
 
 /*

@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
     "container-query-polyfill": "^0.1.2",
+    "danfojs": "^1.1.2",
     "robot3": "^0.3.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
