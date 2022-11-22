@@ -1,8 +1,14 @@
+{{date  | date  : 'short'  : '+1900'}}
+
+<div style="display: flex;justify-content: space-around;">
+
 <button (click)="testIam()">Test iam</button>
 <input type="file" multiple (change)="upload($event)">
 
 <button (click)="service.send('fetch')">Fetch</button>
 <button (click)="service.send('clear')">Clear</button>
+
+
 
 <select (change)="change($event)">
   <option *ngFor="let user of this.service.context.users"> 
@@ -10,15 +16,21 @@
   </option>
 </select>
 
+
+
+
+</div>
+
 <form class="m-4  p-4">
   <input type="text" [disabled]="true" class=" bg-green-300 disabled:bg-red-500" >
 </form>
  
+<app-table></app-table>
 
 
 
 
-<div class="wrapper">
+<div **ngIf="false" class="wrapper">
   <div class="wide-column">
     <article class="card">
       <header>
@@ -54,4 +66,8 @@
     </article>
   </div>
 </div>
+
+<app-taomish-colors></app-taomish-colors>
+
+<!-- <app-block-board></app-block-board> -->
 

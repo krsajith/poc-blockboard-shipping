@@ -1,0 +1,26 @@
+<div class="table-wrapper">
+    <div class="table-header">
+        <button (click)="testFlex()">Test Flex</button>
+
+        <button (click)="nextPage()">Next Page</button>
+
+        <button (click)="sort()">Sort</button>
+        
+        <input [(ngModel)]="searchString" >
+        <button (click)="filter()">Filter</button>
+
+        <button (click)="testFlexNonReactive()">Test Flex NR</button>
+
+        <span>Total {{countSubject$ | async}}</span> 
+        <span>Filtered : {{this.filtered.length}}</span>
+
+    </div>
+    <div class="table-body">
+            <ul>
+                <li *ngFor="let item of page">
+                       {{item.firstName}} 
+                </li>
+            </ul>
+    </div>
+</div>
+

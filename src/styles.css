@@ -86,3 +86,16 @@
       color-scheme: dark;
     }
   }
+
+  .box {
+    width: 100px;
+    height: 75px;
+    border: 1px solid slategrey;
+
+
+  }
+
+  .box > span {
+    -webkit-filter: invert(100%);
+    filter: invert(100%); 
+  }

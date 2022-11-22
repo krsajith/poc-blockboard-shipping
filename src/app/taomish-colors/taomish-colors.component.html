@@ -1,0 +1,10 @@
+<div style="display: flex;gap: 1rem;flex-wrap: wrap;">
+    
+    <span *ngFor="let color of colors" class="box" [style.background-color]="color">
+        <span [style.color]="color">
+            {{color}}
+        </span>
+        
+    </span>
+
+</div>

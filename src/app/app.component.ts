@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FileUploadService } from './file-upload/file-upload.service';
 import { createMachine, interpret, invoke, reduce, state, transition } from 'robot3';
@@ -19,6 +19,8 @@ export class AppComponent implements OnInit {
     console.log(this.machine.state.value);
   }
   title = 'angular-postcss';
+
+  date = new Date("2022-11-29T05:00:00.000+00:00")
 
   context = () => ({
     users: []
@@ -74,21 +76,19 @@ export class AppComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    // this.http.get('config.json').subscribe(resp=>{
-    //   console.log(resp);
-    // });
+    this.http.get('config.json').subscribe(resp=>{
+      console.log(resp);
+    });
     console.log(environment.apiEndpoint);
-
-    // console.table(data);
-
-    data.forEach(d=> d['month']=new Date(d.eodRunDate).toLocaleString('default', { month: 'short' }));
-
 
     const df = new dfd.DataFrame(data);
     let grp = df.groupby(["commodity"]);
     console.log(grp.getGroup(["rice"]))
-    
-    //  grp.col(["openposition"]).sum().print();
+//  grp.col(["openposition"]).sum().print();
+    // console.table(data);
+
+    data.forEach(d=> d['month']=new Date(d.eodRunDate).toLocaleString('default', { month: 'short' }));
+   
 
     const commodityGroup = this.groupBy(data, 'commodity');
 
@@ -113,7 +113,7 @@ export class AppComponent implements OnInit {
       });
     });
 
-    console.log(commodityGroup);
+    console.log(JSON.stringify(commodityGroup));
 
 
   }
@@ -149,5 +149,7 @@ export class AppComponent implements OnInit {
       return { ...acc, [key]: curGroup };
     }, {});
   }
+
+ 
 
 }
