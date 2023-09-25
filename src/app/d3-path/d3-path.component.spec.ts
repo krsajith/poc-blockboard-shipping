@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TaomishColorsComponent } from './taomish-colors.component';
+import { D3PathComponent } from './d3-path.component';
 
-describe('TaomishColorsComponent', () => {
-  let component: TaomishColorsComponent;
-  let fixture: ComponentFixture<TaomishColorsComponent>;
+describe('D3PathComponent', () => {
+  let component: D3PathComponent;
+  let fixture: ComponentFixture<D3PathComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TaomishColorsComponent ]
+      declarations: [ D3PathComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TaomishColorsComponent);
+    fixture = TestBed.createComponent(D3PathComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -3,9 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
+html,body{
+  height: 100%;
+  
+}
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
   
   img {
@@ -98,4 +104,25 @@
   .box > span {
     -webkit-filter: invert(100%);
     filter: invert(100%); 
+  }
+
+
+  path {
+    fill: none;
+    stroke: #999;
+  }
+  circle {
+    fill: none;
+    stroke: #aaa;
+  }
+  
+  
+  .node {
+    stroke: #000;
+    stroke-width: 1.5px;
+  }
+  
+  .link {
+    stroke: #999;
+    stroke-width: 1.5px;
   }

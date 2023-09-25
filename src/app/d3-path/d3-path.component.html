@@ -1,0 +1,48 @@
+<div class="wrapper-100">
+
+
+<div class="input-div">
+
+
+
+<input [(ngModel)]="buy" placeholder="BUY">
+<input [(ngModel)]="sell" placeholder="SELL">
+<button (click)="add()">Add</button>
+
+</div>
+
+<!-- {{sampleData | json}} -->
+<div class="linked-plans-container">
+
+
+<div *ngFor="let group of sampleData" class="linked-plans">
+    <ng-container *ngIf="group.type==='buy'">
+        <div class="source" >
+            <div>{{group.id}}</div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="group.type!=='buy'">
+        <div class="source" >
+            <div *ngFor="let item of group.children" >{{item.id}}</div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="group.type==='sell'">
+        <div class="source" >
+            <div>{{group.id}}</div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="group.type!=='sell'">
+        <div class="source" >
+            <div *ngFor="let item of group.children" >{{item.id}}</div>
+        </div>
+    </ng-container>
+</div>
+</div>
+</div>
+ 
+
+
+
+
+

@@ -6,13 +6,15 @@ import { TableComponent } from './table/table.component';
 import { FormsModule } from '@angular/forms';
 import { BlockBoardComponent } from './block-board/block-board.component';
 import { TaomishColorsComponent } from './taomish-colors/taomish-colors.component';
+import { D3PathComponent } from './d3-path/d3-path.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
     BlockBoardComponent,
-    TaomishColorsComponent
+    TaomishColorsComponent,
+    D3PathComponent
   ],
   imports: [
     BrowserModule,

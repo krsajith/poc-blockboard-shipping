@@ -15,6 +15,15 @@ import data from './data';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  n = 0;
+test() {
+  this.n++;
+}
+
+get x() {
+  return this.n * 2;
+}
+
   showUser(): any {
     console.log(this.machine.state.value);
   }
